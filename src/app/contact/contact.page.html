@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Report an Issue</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="presentPopover($event)">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding margin>
+  <form>
+    <ion-item>
+      <ion-label position="floating" clearInput>Machine No</ion-label>
+      <ion-input value="{{id}}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" clearInput>Date</ion-label>
+      <ion-datetime displayFormat="MMM DD YYYY" min="2016-01-01" max="{{date}}" value="{{date}}"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" clearInput>Details</ion-label>
+      <ion-textarea></ion-textarea>
+    </ion-item>
+    <ion-button float-start margin-top fill="clear" href="/tabs/(list:list)" (click)="presentToastWithOptions()">
+      Submit
+    </ion-button>
+    <ion-button float-end margin-top fill="clear" href="/tabs/(list:list)">
+      Back
+    </ion-button>
+  </form>
+</ion-content>

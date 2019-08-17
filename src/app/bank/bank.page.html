@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>Bank</ion-title>
+      <ion-buttons slot="primary">
+        <ion-button (click)="presentPopover($event)">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding *ngIf="name">
+  <ion-item>
+    <img src="../../assets/{{name}}.gif">
+  </ion-item>
+</ion-content>

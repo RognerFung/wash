@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button float-end margin-top fill="clear" href="/tabs/(about:about)">
+          Cancel
+        </ion-button>
+      </ion-buttons>
+      <ion-title>QR Code</ion-title>
+      <ion-buttons slot="primary">
+        <ion-button (click)="presentPopover($event)">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item justify-content-center href="/tabs/(list:list)" (click)="presentToastWithOptions()">
+    <img id="imgPayMode" src="../../assets/NETSQPAY.png">
+  </ion-item>
+  <ion-item justify-content-center href="/tabs/(list:list)" (click)="presentToastWithOptions()">
+    <ion-title>Scan to Pay</ion-title>
+  </ion-item>
+</ion-content>

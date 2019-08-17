@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+    <ion-title>Machine List</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="presentPopover($event)">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-searchbar animated placeholder="Search a Machine" (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item-group *ngFor="let item of items">
+      <ion-item *ngIf="item.status == 'available'" href="/tabs/(list:item)?id={{item.No}}">
+        <ion-avatar slot="start">
+          <img src="{{item.profilePic}}">
+        </ion-avatar>
+        <ion-label>
+          <h5>{{item.No}}</h5>
+          <p>{{item.location}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-item-group>
+    <ion-item-group *ngFor="let item of items">
+      <ion-item *ngIf="item.status == 'occupied'">
+        <ion-avatar slot="start">
+          <img src="{{item.profilePic}}">
+        </ion-avatar>
+        <ion-label>
+          <h5>{{item.No}}</h5>
+          <p>{{item.location}}</p>
+        </ion-label>
+        <ion-label text-end color="danger">
+          <i>{{item.endTime / 60}} min</i>
+        </ion-label>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
+</ion-content>

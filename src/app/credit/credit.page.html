@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button float-end margin-top fill="clear" href="/tabs/(about:about)">
+        Cancel
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Credit Card</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="presentPopover($event)">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form>
+    <ion-row justify-content-center>
+      <img id="imgPayMode" src="../../assets/VISA_icon.gif">
+      <img id="imgPayModeMaster" src="../../assets/MasterCard_icon.gif" style="padding-left: 20px; padding-right: 20px;">
+    </ion-row>
+    <ion-item>
+      <ion-label>Name on Card</ion-label>
+      <ion-input slot="end"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Card Number</ion-label>
+      <ion-input slot="end"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>CVV/CVV2</ion-label>
+      <ion-input slot="end"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Expire Date</ion-label>
+      <ion-select interface="popover" placeholder="Month">
+        <ion-select-option value="Jan">Jan</ion-select-option>
+        <ion-select-option value="Feb">Feb</ion-select-option>
+        <ion-select-option value="Mar">Mar</ion-select-option>
+        <ion-select-option value="Apr">Apr</ion-select-option>
+        <ion-select-option value="May">May</ion-select-option>
+        <ion-select-option value="Jun">Jun</ion-select-option>
+        <ion-select-option value="Jul">Jul</ion-select-option>
+        <ion-select-option value="Aug">Aug</ion-select-option>
+        <ion-select-option value="Sep">Sep</ion-select-option>
+        <ion-select-option value="Oct">Oct</ion-select-option>
+        <ion-select-option value="Nov">Nov</ion-select-option>
+        <ion-select-option value="Dec">Dec</ion-select-option>
+      </ion-select>
+      <ion-select interface="popover" placeholder="Year">
+        <ion-select-option value="Feb">2019</ion-select-option>
+        <ion-select-option value="Mar">2020</ion-select-option>
+        <ion-select-option value="Apr">2021</ion-select-option>
+        <ion-select-option value="May">2022</ion-select-option>
+        <ion-select-option value="Jun">2023</ion-select-option>
+        <ion-select-option value="Jul">2024</ion-select-option>
+        <ion-select-option value="Aug">2025</ion-select-option>
+        <ion-select-option value="Sep">2026</ion-select-option>
+        <ion-select-option value="Oct">2027</ion-select-option>
+        <ion-select-option value="Nov">2028</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-button float-start margin-top fill="clear" href="/tabs/(list:list)" (click)="presentToastWithOptions()">
+      Submit
+    </ion-button>
+    <ion-button float-end margin-top fill="clear" href="/tabs/(about:about)">
+      Back
+    </ion-button>
+  </form>
+</ion-content>

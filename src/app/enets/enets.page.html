@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button float-end margin-top fill="clear" href="/tabs/(about:about)">
+          Cancel
+        </ion-button>
+      </ion-buttons>
+      <ion-title>Select Bank</ion-title>
+      <ion-buttons slot="primary">
+        <ion-button (click)="presentPopover($event)">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-row justify-content-center>
+      <img src="../../assets/eNETS_DD.png">
+    </ion-row>
+    <ion-item href="/bank?citi">
+        <img src="../../assets/citi.gif" width="112px" height="40px" alt="CITI">
+    </ion-item>
+    <ion-item href="/bank?uob">
+        <img src="../../assets/uob.gif" width="112px" height="40px" alt="UOB">
+    </ion-item>
+    <ion-item href="/bank?ocbc">
+        <img src="../../assets/ocbc.gif" width="112px" height="40px" alt="OCBC">
+    </ion-item>
+    <ion-item href="/bank?sc">
+        <img src="../../assets/sc.gif" width="112px" height="40px" alt="SC">
+    </ion-item>
+    <ion-item href="/bank?dbs">
+        <img src="../../assets/dbs.gif" width="112px" height="40px" alt="DBS">
+    </ion-item>
+  </ion-list>
+  <ion-button float-end margin-top fill="clear" href="/tabs/(about:about)">
+    Back
+  </ion-button>
+</ion-content>

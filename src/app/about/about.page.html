@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>Add Value</ion-title>
+      <ion-buttons slot="primary">
+        <ion-button (click)="presentPopover($event)">
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Ballance</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-label>$10</ion-label>
+    </ion-card-content>
+  </ion-card>
+  <ion-toolbar>
+    <ion-item>
+      <ion-label position="stacked">Add Value</ion-label>
+      <ion-input type="number" required placeholder="Enter Amount" [(ngModel)]="amount"></ion-input>
+      <ion-button type="submit" [disabled]="!amount" margin-top fill="clear" (click)="presentActionSheet()">
+        Pay
+      </ion-button>
+    </ion-item>
+  </ion-toolbar>
+</ion-content>
